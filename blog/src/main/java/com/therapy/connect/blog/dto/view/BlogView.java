@@ -1,7 +1,10 @@
 package com.therapy.connect.blog.dto.view;
 
 import jakarta.validation.constraints.NotEmpty;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.experimental.SuperBuilder;
 
 import java.util.UUID;

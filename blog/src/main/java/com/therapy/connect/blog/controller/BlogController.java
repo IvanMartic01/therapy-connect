@@ -2,11 +2,11 @@ package com.therapy.connect.blog.controller;
 
 import com.therapy.connect.blog.dto.command.CreateBlogCommand;
 import com.therapy.connect.blog.dto.command.UpdateBlogCommand;
+import com.therapy.connect.blog.dto.view.BlogView;
 import com.therapy.connect.blog.mapper.BlogCommandMapper;
 import com.therapy.connect.blog.mapper.BlogViewMapper;
 import com.therapy.connect.blog.model.Blog;
 import com.therapy.connect.blog.service.IBlogService;
-import com.therapy.connect.blog.dto.view.BlogView;
 import com.therapy.connect.util.constants.ProjectConstants;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

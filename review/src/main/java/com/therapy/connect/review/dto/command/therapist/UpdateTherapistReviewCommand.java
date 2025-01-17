@@ -1,6 +1,5 @@
 package com.therapy.connect.review.dto.command.therapist;
 
-import com.therapy.connect.review.dto.command.CreateReviewCommand;
 import com.therapy.connect.review.dto.command.UpdateReviewCommand;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AccessLevel;

@@ -2,7 +2,6 @@ package com.therapy.connect.review.mapper.therapist;
 
 import com.therapy.connect.review.dto.command.therapist.CreateTherapistReviewCommand;
 import com.therapy.connect.review.dto.command.therapist.UpdateTherapistReviewCommand;
-import com.therapy.connect.review.model.BlogReview;
 import com.therapy.connect.review.model.TherapistReview;
 import lombok.NonNull;
 import org.mapstruct.Mapper;

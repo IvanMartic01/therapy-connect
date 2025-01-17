@@ -3,7 +3,6 @@ package com.therapy.connect.blog.entity;
 import com.therapy.connect.core.entity.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import jakarta.persistence.Version;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import lombok.experimental.SuperBuilder;

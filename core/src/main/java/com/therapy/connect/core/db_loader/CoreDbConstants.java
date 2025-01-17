@@ -1,7 +1,6 @@
 package com.therapy.connect.core.db_loader;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.util.UUID;
