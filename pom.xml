@@ -19,6 +19,7 @@
 		<parent.version>0.0.1</parent.version>
 		<org.mapstruct.version>1.6.3</org.mapstruct.version>
 		<spring-cloud.version>2024.0.0</spring-cloud.version>
+		<checkstyle.plugin.version>3.6.0</checkstyle.plugin.version>
 	</properties>
 
 	<modules>
@@ -53,14 +54,35 @@
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${checkstyle.plugin.version}</version>
+				<configuration>
+					<configLocation>checkstyle.xml</configLocation>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 		<pluginManagement>
 			<plugins>
+				<!-- COMPILE CONFIG -->
+				<!-- enable preview java features -->
+				<!-- use lombok and mapstruct processors -->
+				<!-- configure - generated mapper classes will be Spring beans. -->
+				<!-- configure - mapstruct to use constructor injection -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
 						<release>${java.version}</release>
-						<parameters>true</parameters>
 						<showWarnings>true</showWarnings>
 						<annotationProcessorPaths>
 							<path>
