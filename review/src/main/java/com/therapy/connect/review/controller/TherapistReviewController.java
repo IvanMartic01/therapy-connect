@@ -20,7 +20,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequestMapping(ProjectConstants.REVIEW_SERVICE_BASE_PATH + "/therapist-review")
-public class TherapistReviewController {
+final class TherapistReviewController {
 
     private final ITherapistReviewService therapistReviewService;
     private final TherapistReviewCommandMapper therapistReviewCommandMapper;

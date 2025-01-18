@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 @RestController
 @RequestMapping(ProjectConstants.BLOG_SERVICE_BASE_PATH + "/info")
-public class InfoController {
+final class InfoController {
 
     @Value("${build.version}")
     private String buildVersion;

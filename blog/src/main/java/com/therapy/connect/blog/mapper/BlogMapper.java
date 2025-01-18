@@ -9,5 +9,6 @@ import org.mapstruct.Mapper;
 public interface BlogMapper {
 
     @NonNull BlogEntity convert(@NonNull Blog model);
+
     @NonNull Blog convert(@NonNull BlogEntity entity);
 }

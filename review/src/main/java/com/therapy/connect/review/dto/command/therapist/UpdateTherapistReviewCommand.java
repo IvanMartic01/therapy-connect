@@ -12,7 +12,7 @@ import java.util.UUID;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @SuperBuilder
-public class UpdateTherapistReviewCommand extends UpdateReviewCommand {
+public final class UpdateTherapistReviewCommand extends UpdateReviewCommand {
 
     @NotEmpty
     private UUID therapistId;

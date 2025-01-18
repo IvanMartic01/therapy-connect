@@ -10,5 +10,6 @@ import org.mapstruct.Mapper;
 public interface BlogCommandMapper {
 
     @NonNull Blog convert(@NonNull CreateBlogCommand command);
+
     @NonNull Blog convert(@NonNull UpdateBlogCommand command);
 }

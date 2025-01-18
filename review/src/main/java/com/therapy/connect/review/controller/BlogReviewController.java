@@ -20,7 +20,7 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequestMapping(ProjectConstants.REVIEW_SERVICE_BASE_PATH + "/blog-review")
-public class BlogReviewController {
+final class BlogReviewController {
 
     private final IBlogReviewService blogReviewService;
     private final BlogReviewCommandMapper blogReviewCommandMapper;

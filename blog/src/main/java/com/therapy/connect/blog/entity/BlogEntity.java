@@ -15,7 +15,7 @@ import java.util.UUID;
 @SuperBuilder(toBuilder = true)
 @Entity
 @Table(name = "blog")
-public class BlogEntity extends BaseEntity {
+public final class BlogEntity extends BaseEntity {
 
     @NotEmpty
     private String title;
