@@ -10,6 +10,7 @@ import com.therapy.connect.blog.service.IBlogService;
 import com.therapy.connect.util.constants.ProjectConstants;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,12 +21,13 @@ import java.util.UUID;
 @Validated
 @RestController
 @RequestMapping(ProjectConstants.BLOG_SERVICE_BASE_PATH)
-final class BlogController {
+public class BlogController {
 
     private final BlogViewMapper blogViewMapper;
     private final BlogCommandMapper blogCommandMapper;
     private final IBlogService blogService;
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping
     public Collection<BlogView> getAll() {
         return blogService.getAll().stream()
@@ -33,12 +35,14 @@ final class BlogController {
                 .toList();
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
     public BlogView getById(@PathVariable UUID id) {
         Blog foundBlog = blogService.getById(id);
         return blogViewMapper.convert(foundBlog);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public BlogView save(@Valid @RequestBody CreateBlogCommand command) {
         Blog newBlog = blogCommandMapper.convert(command);
@@ -46,6 +50,7 @@ final class BlogController {
         return blogViewMapper.convert(savedBlog);
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @PutMapping
     public BlogView update(@Valid @RequestBody UpdateBlogCommand command) {
         Blog blogToUpdate = blogCommandMapper.convert(command);
@@ -53,6 +58,7 @@ final class BlogController {
         return blogViewMapper.convert(updatedBlog);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable UUID id) {
         blogService.delete(id);

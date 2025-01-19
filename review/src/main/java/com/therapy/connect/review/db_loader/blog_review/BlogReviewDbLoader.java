@@ -3,12 +3,14 @@ package com.therapy.connect.review.db_loader.blog_review;
 import com.therapy.connect.review.service.blog.IBlogReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import static com.therapy.connect.review.db_loader.blog_review.BlogDbModelConstants.getBlogReview1;
 
 
 @RequiredArgsConstructor
+@Profile("local")
 @Component
 class BlogReviewDbLoader implements CommandLineRunner {
 

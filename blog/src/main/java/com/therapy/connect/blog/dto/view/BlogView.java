@@ -1,13 +1,13 @@
 package com.therapy.connect.blog.dto.view;
 
 import jakarta.validation.constraints.NotEmpty;
-import lombok.Getter;
-import lombok.NonNull;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.util.UUID;
 
 @Getter
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @SuperBuilder
 public class BlogView {
 

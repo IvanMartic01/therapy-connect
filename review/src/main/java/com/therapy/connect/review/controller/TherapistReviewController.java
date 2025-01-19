@@ -10,6 +10,7 @@ import com.therapy.connect.review.service.therapist.ITherapistReviewService;
 import com.therapy.connect.util.constants.ProjectConstants;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +27,7 @@ final class TherapistReviewController {
     private final TherapistReviewCommandMapper therapistReviewCommandMapper;
     private final TherapistReviewViewMapper therapistReviewViewMapper;
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping
     public Collection<TherapistReviewView> getTherapistReviews() {
         return therapistReviewService.findAll().stream()
@@ -33,12 +35,14 @@ final class TherapistReviewController {
                 .toList();
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
     public TherapistReviewView getById(@PathVariable UUID id) {
         TherapistReview therapistReview = therapistReviewService.findById(id);
         return therapistReviewViewMapper.convert(therapistReview);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public TherapistReviewView save(@Valid @RequestBody CreateTherapistReviewCommand command) {
         TherapistReview therapistReview = therapistReviewCommandMapper.convert(command);
@@ -46,6 +50,7 @@ final class TherapistReviewController {
         return therapistReviewViewMapper.convert(savedTherapistReview);
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @PutMapping
     public TherapistReviewView update(@Valid @RequestBody UpdateTherapistReviewCommand command) {
         TherapistReview therapistReview = therapistReviewCommandMapper.convert(command);
@@ -53,6 +58,7 @@ final class TherapistReviewController {
         return therapistReviewViewMapper.convert(updatedTherapistReview);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable UUID id) {
         therapistReviewService.deleteById(id);
